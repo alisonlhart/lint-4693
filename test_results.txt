@@ -1,0 +1,368 @@
+﻿2025-07-28T16:22:15.9802323Z Current runner version: '2.326.0'
+2025-07-28T16:22:15.9826175Z ##[group]Runner Image Provisioner
+2025-07-28T16:22:15.9827287Z Hosted Compute Agent
+2025-07-28T16:22:15.9828179Z Version: 20250711.363
+2025-07-28T16:22:15.9829066Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-28T16:22:15.9830197Z Build Date: 2025-07-11T20:04:25Z
+2025-07-28T16:22:15.9831096Z ##[endgroup]
+2025-07-28T16:22:15.9831867Z ##[group]Operating System
+2025-07-28T16:22:15.9832808Z Ubuntu
+2025-07-28T16:22:15.9833351Z 24.04.2
+2025-07-28T16:22:15.9833825Z LTS
+2025-07-28T16:22:15.9834318Z ##[endgroup]
+2025-07-28T16:22:15.9834838Z ##[group]Runner Image
+2025-07-28T16:22:15.9835422Z Image: ubuntu-24.04
+2025-07-28T16:22:15.9836240Z Version: 20250720.1.0
+2025-07-28T16:22:15.9837297Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250720.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-28T16:22:15.9838880Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250720.1
+2025-07-28T16:22:15.9839948Z ##[endgroup]
+2025-07-28T16:22:15.9841069Z ##[group]GITHUB_TOKEN Permissions
+2025-07-28T16:22:15.9843167Z Contents: read
+2025-07-28T16:22:15.9843736Z Metadata: read
+2025-07-28T16:22:15.9844278Z Packages: read
+2025-07-28T16:22:15.9844790Z ##[endgroup]
+2025-07-28T16:22:15.9847322Z Secret source: Actions
+2025-07-28T16:22:15.9848125Z Prepare workflow directory
+2025-07-28T16:22:16.0164399Z Prepare all required actions
+2025-07-28T16:22:16.0202400Z Getting action download info
+2025-07-28T16:22:16.3391365Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-28T16:22:16.3392309Z Version: 4.2.2
+2025-07-28T16:22:16.3393436Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-28T16:22:16.3394580Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-28T16:22:16.3395249Z ##[endgroup]
+2025-07-28T16:22:16.4215961Z Download action repository 'ansible/ansible-lint@v25.5.0' (SHA:4114ad63edbc25dcd9afc4f41b29dbcbebdf21ca)
+2025-07-28T16:22:17.0764181Z Getting action download info
+2025-07-28T16:22:17.2251667Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-07-28T16:22:17.2252697Z Version: 5.6.0
+2025-07-28T16:22:17.2253525Z Digest: sha256:0b35a0c11c97499e4e0576589036d450b9f5f9da74b7774225b3614b57324404
+2025-07-28T16:22:17.2254534Z Source commit SHA: a26af69be951a213d495a4c3e4e4022e16d87065
+2025-07-28T16:22:17.2255235Z ##[endgroup]
+2025-07-28T16:22:17.4502247Z Complete job name: Ansible Lint
+2025-07-28T16:22:17.5246002Z ##[group]Run actions/checkout@v4
+2025-07-28T16:22:17.5247336Z with:
+2025-07-28T16:22:17.5248124Z   repository: alisonlhart/lint-4693
+2025-07-28T16:22:17.5249423Z   token: ***
+2025-07-28T16:22:17.5250181Z   ssh-strict: true
+2025-07-28T16:22:17.5250979Z   ssh-user: git
+2025-07-28T16:22:17.5251792Z   persist-credentials: true
+2025-07-28T16:22:17.5252702Z   clean: true
+2025-07-28T16:22:17.5253512Z   sparse-checkout-cone-mode: true
+2025-07-28T16:22:17.5254489Z   fetch-depth: 1
+2025-07-28T16:22:17.5255274Z   fetch-tags: false
+2025-07-28T16:22:17.5256253Z   show-progress: true
+2025-07-28T16:22:17.5257086Z   lfs: false
+2025-07-28T16:22:17.5257828Z   submodules: false
+2025-07-28T16:22:17.5258668Z   set-safe-directory: true
+2025-07-28T16:22:17.5259795Z ##[endgroup]
+2025-07-28T16:22:17.6335274Z Syncing repository: alisonlhart/lint-4693
+2025-07-28T16:22:17.6338192Z ##[group]Getting Git version info
+2025-07-28T16:22:17.6339612Z Working directory is '/home/runner/work/lint-4693/lint-4693'
+2025-07-28T16:22:17.6341594Z [command]/usr/bin/git version
+2025-07-28T16:22:17.6358659Z git version 2.50.1
+2025-07-28T16:22:17.6384815Z ##[endgroup]
+2025-07-28T16:22:17.6398757Z Temporarily overriding HOME='/home/runner/work/_temp/d7f61618-ec50-4cdc-b480-a11cda509d72' before making global git config changes
+2025-07-28T16:22:17.6401595Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-28T16:22:17.6404249Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lint-4693/lint-4693
+2025-07-28T16:22:17.6437154Z Deleting the contents of '/home/runner/work/lint-4693/lint-4693'
+2025-07-28T16:22:17.6440680Z ##[group]Initializing the repository
+2025-07-28T16:22:17.6444324Z [command]/usr/bin/git init /home/runner/work/lint-4693/lint-4693
+2025-07-28T16:22:17.6495788Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-28T16:22:17.6498864Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-28T16:22:17.6500694Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-28T16:22:17.6502016Z hint:
+2025-07-28T16:22:17.6503359Z hint: 	git config --global init.defaultBranch <name>
+2025-07-28T16:22:17.6504648Z hint:
+2025-07-28T16:22:17.6505924Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-28T16:22:17.6507874Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-28T16:22:17.6509530Z hint:
+2025-07-28T16:22:17.6510261Z hint: 	git branch -m <name>
+2025-07-28T16:22:17.6511128Z hint:
+2025-07-28T16:22:17.6512298Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-07-28T16:22:17.6514238Z Initialized empty Git repository in /home/runner/work/lint-4693/lint-4693/.git/
+2025-07-28T16:22:17.6517780Z [command]/usr/bin/git remote add origin https://github.com/alisonlhart/lint-4693
+2025-07-28T16:22:17.6541265Z ##[endgroup]
+2025-07-28T16:22:17.6542687Z ##[group]Disabling automatic garbage collection
+2025-07-28T16:22:17.6544257Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-28T16:22:17.6573120Z ##[endgroup]
+2025-07-28T16:22:17.6574423Z ##[group]Setting up auth
+2025-07-28T16:22:17.6579134Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-28T16:22:17.6609258Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-28T16:22:17.6862402Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-28T16:22:17.6893008Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-28T16:22:17.7111172Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-28T16:22:17.7144446Z ##[endgroup]
+2025-07-28T16:22:17.7146279Z ##[group]Fetching the repository
+2025-07-28T16:22:17.7153891Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0f9ca9293126aa5f8b9f334a63ec977bca3a4b0a:refs/remotes/origin/main
+2025-07-28T16:22:17.8998177Z From https://github.com/alisonlhart/lint-4693
+2025-07-28T16:22:17.9000490Z  * [new ref]         0f9ca9293126aa5f8b9f334a63ec977bca3a4b0a -> origin/main
+2025-07-28T16:22:17.9023012Z ##[endgroup]
+2025-07-28T16:22:17.9024548Z ##[group]Determining the checkout info
+2025-07-28T16:22:17.9026388Z ##[endgroup]
+2025-07-28T16:22:17.9030085Z [command]/usr/bin/git sparse-checkout disable
+2025-07-28T16:22:17.9071497Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-28T16:22:17.9101249Z ##[group]Checking out the ref
+2025-07-28T16:22:17.9104455Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-07-28T16:22:17.9145710Z Switched to a new branch 'main'
+2025-07-28T16:22:17.9148438Z branch 'main' set up to track 'origin/main'.
+2025-07-28T16:22:17.9155810Z ##[endgroup]
+2025-07-28T16:22:17.9187861Z [command]/usr/bin/git log -1 --format=%H
+2025-07-28T16:22:17.9209551Z 0f9ca9293126aa5f8b9f334a63ec977bca3a4b0a
+2025-07-28T16:22:17.9588596Z ##[group]Run ansible/ansible-lint@v25.5.0
+2025-07-28T16:22:17.9589609Z with:
+2025-07-28T16:22:17.9590299Z   setup_python: true
+2025-07-28T16:22:17.9591137Z   requirements_file: meta/requirements.yml
+2025-07-28T16:22:17.9592139Z   expected_return_code: 0
+2025-07-28T16:22:17.9593206Z ##[endgroup]
+2025-07-28T16:22:17.9716578Z ##[group]Run if [[ -n "" ]]; then
+2025-07-28T16:22:17.9717585Z [36;1mif [[ -n "" ]]; then[0m
+2025-07-28T16:22:17.9718601Z [36;1m  echo "working_directory=" >> $GITHUB_OUTPUT[0m
+2025-07-28T16:22:17.9719651Z [36;1melse[0m
+2025-07-28T16:22:17.9720913Z [36;1m  echo "working_directory=/home/runner/work/lint-4693/lint-4693" >> $GITHUB_OUTPUT[0m
+2025-07-28T16:22:17.9722365Z [36;1mfi[0m
+2025-07-28T16:22:17.9756407Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T16:22:17.9757629Z ##[endgroup]
+2025-07-28T16:22:17.9992435Z ##[group]Run action_ref=""
+2025-07-28T16:22:17.9993372Z [36;1maction_ref=""[0m
+2025-07-28T16:22:17.9994228Z [36;1mif [[ -z "" ]]; then[0m
+2025-07-28T16:22:17.9995137Z [36;1m  action_ref="main"[0m
+2025-07-28T16:22:17.9996203Z [36;1mfi[0m
+2025-07-28T16:22:17.9997079Z [36;1mecho "ACTION_REF=${action_ref}" >> "$GITHUB_ENV"[0m
+2025-07-28T16:22:18.0027027Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T16:22:18.0028199Z ##[endgroup]
+2025-07-28T16:22:18.0161522Z ##[group]Run reqs_file=$(git rev-parse --show-toplevel)/.git/ansible-lint-requirements.txt
+2025-07-28T16:22:18.0164959Z [36;1mreqs_file=$(git rev-parse --show-toplevel)/.git/ansible-lint-requirements.txt[0m
+2025-07-28T16:22:18.0167957Z [36;1mecho "reqs_file=$reqs_file" >> $GITHUB_OUTPUT[0m
+2025-07-28T16:22:18.0171887Z [36;1mwget --output-document=$reqs_file https://raw.githubusercontent.com/ansible/ansible-lint/$GH_ACTION_REF/.config/requirements-lock.txt[0m
+2025-07-28T16:22:18.0216536Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T16:22:18.0218127Z env:
+2025-07-28T16:22:18.0219013Z   ACTION_REF: main
+2025-07-28T16:22:18.0220014Z   GH_ACTION_REF: main
+2025-07-28T16:22:18.0221067Z ##[endgroup]
+2025-07-28T16:22:18.0675178Z --2025-07-28 16:22:18--  https://raw.githubusercontent.com/ansible/ansible-lint/main/.config/requirements-lock.txt
+2025-07-28T16:22:18.0923118Z Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...
+2025-07-28T16:22:18.0938333Z Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+2025-07-28T16:22:18.1038444Z HTTP request sent, awaiting response... 200 OK
+2025-07-28T16:22:18.1040623Z Length: 1770 (1.7K) [text/plain]
+2025-07-28T16:22:18.1043007Z Saving to: ‘/home/runner/work/lint-4693/lint-4693/.git/ansible-lint-requirements.txt’
+2025-07-28T16:22:18.1044462Z 
+2025-07-28T16:22:18.1044935Z      0K .                                                     100% 35.3M=0s
+2025-07-28T16:22:18.1046084Z 
+2025-07-28T16:22:18.1047720Z 2025-07-28 16:22:18 (35.3 MB/s) - ‘/home/runner/work/lint-4693/lint-4693/.git/ansible-lint-requirements.txt’ saved [1770/1770]
+2025-07-28T16:22:18.1049630Z 
+2025-07-28T16:22:18.1165423Z ##[group]Run actions/setup-python@v5
+2025-07-28T16:22:18.1166457Z with:
+2025-07-28T16:22:18.1167105Z   cache: pip
+2025-07-28T16:22:18.1168477Z   cache-dependency-path: /home/runner/work/lint-4693/lint-4693/.git/ansible-lint-requirements.txt
+2025-07-28T16:22:18.1170111Z   python-version: 3.11
+2025-07-28T16:22:18.1170884Z   check-latest: false
+2025-07-28T16:22:18.1171880Z   token: ***
+2025-07-28T16:22:18.1172606Z   update-environment: true
+2025-07-28T16:22:18.1173455Z   allow-prereleases: false
+2025-07-28T16:22:18.1174283Z   freethreaded: false
+2025-07-28T16:22:18.1175002Z env:
+2025-07-28T16:22:18.1175768Z   ACTION_REF: main
+2025-07-28T16:22:18.1176476Z ##[endgroup]
+2025-07-28T16:22:18.2823690Z ##[group]Installed versions
+2025-07-28T16:22:18.2911444Z Successfully set up CPython (3.11.13)
+2025-07-28T16:22:18.2913387Z ##[endgroup]
+2025-07-28T16:22:18.3192518Z [command]/opt/hostedtoolcache/Python/3.11.13/x64/bin/pip cache dir
+2025-07-28T16:22:19.4533694Z /home/runner/.cache/pip
+2025-07-28T16:22:19.6662950Z pip cache is not found
+2025-07-28T16:22:19.6762919Z ##[group]Run cd $GITHUB_ACTION_PATH
+2025-07-28T16:22:19.6763267Z [36;1mcd $GITHUB_ACTION_PATH[0m
+2025-07-28T16:22:19.6764057Z [36;1mpip install "ansible-lint[lock] @ git+https://github.com/ansible/ansible-lint@$GH_ACTION_REF"[0m
+2025-07-28T16:22:19.6764551Z [36;1mansible-lint --version[0m
+2025-07-28T16:22:19.6796102Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T16:22:19.6796477Z env:
+2025-07-28T16:22:19.6796693Z   ACTION_REF: main
+2025-07-28T16:22:19.6797010Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:19.6797492Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.13/x64/lib/pkgconfig
+2025-07-28T16:22:19.6797957Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:19.6798371Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:19.6798803Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:19.6799235Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.13/x64/lib
+2025-07-28T16:22:19.6799632Z   GH_ACTION_REF: main
+2025-07-28T16:22:19.6799874Z ##[endgroup]
+2025-07-28T16:22:20.8259091Z Collecting ansible-lint@ git+https://github.com/ansible/ansible-lint@main (from ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:20.8263173Z   Cloning https://github.com/ansible/ansible-lint (to revision main) to /tmp/pip-install-ahg5haxb/ansible-lint_3afcf95e4ee04bf7b589f7e01e99f764
+2025-07-28T16:22:20.8282147Z   Running command git clone --filter=blob:none --quiet https://github.com/ansible/ansible-lint /tmp/pip-install-ahg5haxb/ansible-lint_3afcf95e4ee04bf7b589f7e01e99f764
+2025-07-28T16:22:21.4827437Z   Resolved https://github.com/ansible/ansible-lint to commit 198b7dde55485838148c1b2bac1157b05fbd8bc4
+2025-07-28T16:22:21.4828552Z   Running command git submodule update --init --recursive -q
+2025-07-28T16:22:21.5095957Z   Installing build dependencies: started
+2025-07-28T16:22:22.4759604Z   Installing build dependencies: finished with status 'done'
+2025-07-28T16:22:22.4766281Z   Getting requirements to build wheel: started
+2025-07-28T16:22:23.4486004Z   Getting requirements to build wheel: finished with status 'done'
+2025-07-28T16:22:23.4494308Z   Preparing metadata (pyproject.toml): started
+2025-07-28T16:22:23.7909826Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-07-28T16:22:23.8767245Z Collecting ansible-core>=2.16.11 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:23.9087366Z   Downloading ansible_core-2.19.0-py3-none-any.whl.metadata (7.7 kB)
+2025-07-28T16:22:23.9282580Z Collecting ansible-compat>=25.1.5 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:23.9317450Z   Downloading ansible_compat-25.6.0-py3-none-any.whl.metadata (3.9 kB)
+2025-07-28T16:22:24.0013954Z Collecting black>=24.3.0 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.0058044Z   Downloading black-25.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (81 kB)
+2025-07-28T16:22:24.0397694Z Collecting filelock>=3.8.2 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.0433124Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-07-28T16:22:24.0785406Z Collecting importlib-metadata (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.0818935Z   Downloading importlib_metadata-8.7.0-py3-none-any.whl.metadata (4.8 kB)
+2025-07-28T16:22:24.1179283Z Collecting jsonschema>=4.10.0 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.1211286Z   Downloading jsonschema-4.25.0-py3-none-any.whl.metadata (7.7 kB)
+2025-07-28T16:22:24.1593134Z Collecting packaging>=22.0 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.1606019Z   Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+2025-07-28T16:22:24.1749692Z Collecting pathspec>=0.10.3 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.1783023Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-07-28T16:22:24.2839300Z Collecting pyyaml>=6.0.2 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.2873191Z   Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-07-28T16:22:24.4188385Z Collecting ruamel.yaml>=0.18.11 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.4223546Z   Downloading ruamel.yaml-0.18.14-py3-none-any.whl.metadata (24 kB)
+2025-07-28T16:22:24.4520570Z Collecting referencing>=0.36.2 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.4554499Z   Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB)
+2025-07-28T16:22:24.4738462Z Collecting subprocess-tee>=0.4.1 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.4772577Z   Downloading subprocess_tee-0.4.2-py3-none-any.whl.metadata (3.3 kB)
+2025-07-28T16:22:24.5010823Z Collecting yamllint>=1.34.0 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.5044667Z   Downloading yamllint-1.37.1-py3-none-any.whl.metadata (4.3 kB)
+2025-07-28T16:22:24.5302845Z Collecting wcmatch>=8.1.2 (from ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.5338179Z   Downloading wcmatch-10.1-py3-none-any.whl.metadata (5.1 kB)
+2025-07-28T16:22:24.5376422Z WARNING: ansible-lint 25.6.2.dev29 does not provide the extra 'lock'
+2025-07-28T16:22:24.5716889Z Collecting jinja2>=3.1.0 (from ansible-core>=2.16.11->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.5750491Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2025-07-28T16:22:24.7549900Z Collecting cryptography (from ansible-core>=2.16.11->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.7590362Z   Downloading cryptography-45.0.5-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+2025-07-28T16:22:24.7827771Z Collecting resolvelib<2.0.0,>=0.5.3 (from ansible-core>=2.16.11->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.7869478Z   Downloading resolvelib-1.2.0-py3-none-any.whl.metadata (3.7 kB)
+2025-07-28T16:22:24.8123579Z Collecting click>=8.0.0 (from black>=24.3.0->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.8156757Z   Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+2025-07-28T16:22:24.8263221Z Collecting mypy-extensions>=0.4.3 (from black>=24.3.0->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.8321161Z   Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+2025-07-28T16:22:24.8543182Z Collecting platformdirs>=2 (from black>=24.3.0->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.8584883Z   Downloading platformdirs-4.3.8-py3-none-any.whl.metadata (12 kB)
+2025-07-28T16:22:24.9258292Z Collecting MarkupSafe>=2.0 (from jinja2>=3.1.0->ansible-core>=2.16.11->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:24.9294740Z   Downloading MarkupSafe-3.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+2025-07-28T16:22:25.0850610Z Collecting attrs>=22.2.0 (from jsonschema>=4.10.0->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:25.0896690Z   Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+2025-07-28T16:22:25.1704164Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.10.0->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:25.1739244Z   Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl.metadata (2.9 kB)
+2025-07-28T16:22:25.4072515Z Collecting rpds-py>=0.7.1 (from jsonschema>=4.10.0->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:25.4116965Z   Downloading rpds_py-0.26.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+2025-07-28T16:22:25.4477622Z Collecting typing-extensions>=4.4.0 (from referencing>=0.36.2->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:25.4524924Z   Downloading typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+2025-07-28T16:22:25.4839383Z Collecting ruamel.yaml.clib>=0.2.7 (from ruamel.yaml>=0.18.11->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:25.4876212Z   Downloading ruamel.yaml.clib-0.2.12-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.7 kB)
+2025-07-28T16:22:25.5029304Z Collecting bracex>=2.1.1 (from wcmatch>=8.1.2->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:25.5062245Z   Downloading bracex-2.6-py3-none-any.whl.metadata (3.6 kB)
+2025-07-28T16:22:25.6269378Z Collecting cffi>=1.14 (from cryptography->ansible-core>=2.16.11->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:25.6304385Z   Downloading cffi-1.17.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+2025-07-28T16:22:25.6420181Z Collecting pycparser (from cffi>=1.14->cryptography->ansible-core>=2.16.11->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:25.6453636Z   Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+2025-07-28T16:22:25.6633979Z Collecting zipp>=3.20 (from importlib-metadata->ansible-lint@ git+https://github.com/ansible/ansible-lint@main->ansible-lint[lock]@ git+https://github.com/ansible/ansible-lint@main)
+2025-07-28T16:22:25.6667251Z   Downloading zipp-3.23.0-py3-none-any.whl.metadata (3.6 kB)
+2025-07-28T16:22:25.6766805Z Downloading ansible_compat-25.6.0-py3-none-any.whl (25 kB)
+2025-07-28T16:22:25.6853222Z Downloading ansible_core-2.19.0-py3-none-any.whl (2.4 MB)
+2025-07-28T16:22:25.7219062Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 70.7 MB/s eta 0:00:00
+2025-07-28T16:22:25.7254051Z Downloading resolvelib-1.2.0-py3-none-any.whl (18 kB)
+2025-07-28T16:22:25.7310794Z Downloading black-25.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2025-07-28T16:22:25.7491643Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 104.1 MB/s eta 0:00:00
+2025-07-28T16:22:25.7524541Z Downloading click-8.2.1-py3-none-any.whl (102 kB)
+2025-07-28T16:22:25.7580862Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-07-28T16:22:25.7633877Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-07-28T16:22:25.7703178Z Downloading jsonschema-4.25.0-py3-none-any.whl (89 kB)
+2025-07-28T16:22:25.7760150Z Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+2025-07-28T16:22:25.7816856Z Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl (18 kB)
+2025-07-28T16:22:25.7872212Z Downloading MarkupSafe-3.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+2025-07-28T16:22:25.7926438Z Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+2025-07-28T16:22:25.7957347Z Using cached packaging-25.0-py3-none-any.whl (66 kB)
+2025-07-28T16:22:25.7990948Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-07-28T16:22:25.8044844Z Downloading platformdirs-4.3.8-py3-none-any.whl (18 kB)
+2025-07-28T16:22:25.8099388Z Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (762 kB)
+2025-07-28T16:22:25.8187071Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 763.0/763.0 kB 79.9 MB/s eta 0:00:00
+2025-07-28T16:22:25.8221215Z Downloading referencing-0.36.2-py3-none-any.whl (26 kB)
+2025-07-28T16:22:25.8276602Z Downloading rpds_py-0.26.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (383 kB)
+2025-07-28T16:22:25.8353291Z Downloading ruamel.yaml-0.18.14-py3-none-any.whl (118 kB)
+2025-07-28T16:22:25.8410338Z Downloading ruamel.yaml.clib-0.2.12-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (739 kB)
+2025-07-28T16:22:25.8489030Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 739.1/739.1 kB 92.3 MB/s eta 0:00:00
+2025-07-28T16:22:25.8523093Z Downloading subprocess_tee-0.4.2-py3-none-any.whl (5.2 kB)
+2025-07-28T16:22:25.8574371Z Downloading typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+2025-07-28T16:22:25.8628115Z Downloading wcmatch-10.1-py3-none-any.whl (39 kB)
+2025-07-28T16:22:25.8686426Z Downloading bracex-2.6-py3-none-any.whl (11 kB)
+2025-07-28T16:22:25.8737385Z Downloading yamllint-1.37.1-py3-none-any.whl (68 kB)
+2025-07-28T16:22:25.8791065Z Downloading cryptography-45.0.5-cp311-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
+2025-07-28T16:22:25.9079738Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 157.9 MB/s eta 0:00:00
+2025-07-28T16:22:25.9115338Z Downloading cffi-1.17.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (467 kB)
+2025-07-28T16:22:25.9187142Z Downloading importlib_metadata-8.7.0-py3-none-any.whl (27 kB)
+2025-07-28T16:22:25.9241345Z Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+2025-07-28T16:22:25.9292953Z Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+2025-07-28T16:22:25.9648477Z Building wheels for collected packages: ansible-lint
+2025-07-28T16:22:25.9684500Z   Building wheel for ansible-lint (pyproject.toml): started
+2025-07-28T16:22:26.4373116Z   Building wheel for ansible-lint (pyproject.toml): finished with status 'done'
+2025-07-28T16:22:26.4381317Z   Created wheel for ansible-lint: filename=ansible_lint-25.6.2.dev29-py3-none-any.whl size=326542 sha256=e6e6dc18a6754a0c49a128b7778f4a27734dd9fb4ba6ccba45f4be5714af83d9
+2025-07-28T16:22:26.4382779Z   Stored in directory: /tmp/pip-ephem-wheel-cache-b2p5ij31/wheels/7f/3a/bf/9252a64b3cd0a941a36be0a242bb08695b9ac912dad7f67cf6
+2025-07-28T16:22:26.4410740Z Successfully built ansible-lint
+2025-07-28T16:22:26.4905809Z Installing collected packages: zipp, typing-extensions, subprocess-tee, ruamel.yaml.clib, rpds-py, resolvelib, pyyaml, pycparser, platformdirs, pathspec, packaging, mypy-extensions, MarkupSafe, filelock, click, bracex, attrs, yamllint, wcmatch, ruamel.yaml, referencing, jinja2, importlib-metadata, cffi, black, jsonschema-specifications, cryptography, jsonschema, ansible-core, ansible-compat, ansible-lint
+2025-07-28T16:22:28.9210005Z 
+2025-07-28T16:22:28.9231570Z Successfully installed MarkupSafe-3.0.2 ansible-compat-25.6.0 ansible-core-2.19.0 ansible-lint-25.6.2.dev29 attrs-25.3.0 black-25.1.0 bracex-2.6 cffi-1.17.1 click-8.2.1 cryptography-45.0.5 filelock-3.18.0 importlib-metadata-8.7.0 jinja2-3.1.6 jsonschema-4.25.0 jsonschema-specifications-2025.4.1 mypy-extensions-1.1.0 packaging-25.0 pathspec-0.12.1 platformdirs-4.3.8 pycparser-2.22 pyyaml-6.0.2 referencing-0.36.2 resolvelib-1.2.0 rpds-py-0.26.0 ruamel.yaml-0.18.14 ruamel.yaml.clib-0.2.12 subprocess-tee-0.4.2 typing-extensions-4.14.1 wcmatch-10.1 yamllint-1.37.1 zipp-3.23.0
+2025-07-28T16:22:30.1616880Z ansible-lint 25.6.2.dev29 using ansible-core:2.19.0 ansible-compat:25.6.0 ruamel-yaml:0.18.14 ruamel-yaml-clib:0.2.12
+2025-07-28T16:22:30.2228325Z ##[group]Run ansible-galaxy install -r meta/requirements.yml
+2025-07-28T16:22:30.2228722Z [36;1mansible-galaxy install -r meta/requirements.yml[0m
+2025-07-28T16:22:30.2257064Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T16:22:30.2257374Z env:
+2025-07-28T16:22:30.2257547Z   ACTION_REF: main
+2025-07-28T16:22:30.2257801Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:30.2258190Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.13/x64/lib/pkgconfig
+2025-07-28T16:22:30.2258572Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:30.2258909Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:30.2259251Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:30.2259618Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.13/x64/lib
+2025-07-28T16:22:30.2259910Z ##[endgroup]
+2025-07-28T16:22:30.6588377Z Skipping install, no requirements found
+2025-07-28T16:22:30.7001189Z ##[group]Run exit_code=0
+2025-07-28T16:22:30.7001447Z [36;1mexit_code=0[0m
+2025-07-28T16:22:30.7001639Z [36;1mexpected_exit_code=0[0m
+2025-07-28T16:22:30.7001871Z [36;1mansible-lint  || exit_code=$?[0m
+2025-07-28T16:22:30.7002366Z [36;1mif [ "$exit_code" != "$expected_exit_code" ]; then echo "Command failed: got '$exit_code', expected '$expected_exit_code'"; exit 1; fi[0m
+2025-07-28T16:22:30.7030763Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-07-28T16:22:30.7031060Z env:
+2025-07-28T16:22:30.7031223Z   ACTION_REF: main
+2025-07-28T16:22:30.7031472Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:30.7031869Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.13/x64/lib/pkgconfig
+2025-07-28T16:22:30.7032253Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:30.7032588Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:30.7032931Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.13/x64
+2025-07-28T16:22:30.7033279Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.13/x64/lib
+2025-07-28T16:22:30.7033568Z ##[endgroup]
+2025-07-28T16:22:34.0671061Z WARNING  Listing 3 violation(s) that are fatal
+2025-07-28T16:22:34.0691863Z ##[error]No new line character at the end of file
+2025-07-28T16:22:34.0693247Z ##[error]Trailing spaces
+2025-07-28T16:22:34.0693967Z ##[error]Use FQCN for builtin module actions (debug).
+2025-07-28T16:22:34.0694390Z Read documentation for instructions on how to ignore specific rule violations.
+2025-07-28T16:22:34.0694697Z 
+2025-07-28T16:22:34.0694782Z # Rule Violation Summary
+2025-07-28T16:22:34.0694914Z 
+2025-07-28T16:22:34.0695026Z   1 yaml profile:basic tags:formatting,yaml
+2025-07-28T16:22:34.0695293Z   1 yaml profile:basic tags:formatting,yaml
+2025-07-28T16:22:34.0695810Z   1 fqcn profile:basic tags:formatting
+2025-07-28T16:22:34.0696097Z 
+2025-07-28T16:22:34.1562803Z Failed: 3 failure(s), 0 warning(s) on 5 files. Last profile that met the validation criteria was 'min'.
+2025-07-28T16:22:34.1564120Z yaml[new-line-at-end-of-file]: No new line character at the end of file
+2025-07-28T16:22:34.1564616Z meta/requirements.yml:2
+2025-07-28T16:22:34.1564799Z 
+2025-07-28T16:22:34.1564936Z yaml[trailing-spaces]: Trailing spaces
+2025-07-28T16:22:34.1565274Z meta/requirements.yml:2
+2025-07-28T16:22:34.1565895Z 
+2025-07-28T16:22:34.1566113Z fqcn[action-core]: Use FQCN for builtin module actions (debug).
+2025-07-28T16:22:34.1566700Z test.yml:6:7 Use `ansible.builtin.debug` or `ansible.legacy.debug` instead.
+2025-07-28T16:22:34.1567087Z 
+2025-07-28T16:22:34.2293911Z Command failed: got '2', expected '0'
+2025-07-28T16:22:34.2299793Z ##[error]Process completed with exit code 1.
+2025-07-28T16:22:34.2421830Z Post job cleanup.
+2025-07-28T16:22:34.2507511Z Post job cleanup.
+2025-07-28T16:22:34.3434882Z [command]/usr/bin/git version
+2025-07-28T16:22:34.3470636Z git version 2.50.1
+2025-07-28T16:22:34.3514211Z Temporarily overriding HOME='/home/runner/work/_temp/41e955c4-dc19-4851-a057-cc282e229b15' before making global git config changes
+2025-07-28T16:22:34.3515684Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-28T16:22:34.3527930Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lint-4693/lint-4693
+2025-07-28T16:22:34.3562741Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-28T16:22:34.3594914Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-28T16:22:34.3822279Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-28T16:22:34.3846608Z http.https://github.com/.extraheader
+2025-07-28T16:22:34.3858655Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-07-28T16:22:34.3891307Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-28T16:22:34.4266101Z Cleaning up orphan processes

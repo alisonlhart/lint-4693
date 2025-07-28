@@ -3,5 +3,5 @@
   hosts: localhost
   tasks:
     - name: Debug
-      debug:
+      ansible.builtin.debug:
         msg: "Hello"

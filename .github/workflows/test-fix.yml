@@ -1,0 +1,26 @@
+name: test-ansible-lint-fix
+on: [workflow_dispatch, push]
+
+jobs:
+  test-fix:
+    name: Test Fixed Ansible Lint Action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Test local ansible-lint action with explicit version
+        uses: ./ansible-lint/ansible-lint/
+        with:
+          setup_python: "true"
+          requirements_file: "meta/requirements.yml"
+          gh_action_ref: "v25.5.0"  # Use input to simulate the v25.5.0 scenario
+          # This tests that when gh_action_ref is set, it uses that version
+          
+      - name: Test local ansible-lint action fallback to main
+        uses: ./ansible-lint/ansible-lint/
+        with:
+          setup_python: "true"
+          requirements_file: "meta/requirements.yml"
+          # No gh_action_ref input - should fallback to main
+          # This tests the fallback logic when github.action_ref is empty 
