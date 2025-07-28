@@ -8,17 +8,30 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          
+      - name: Debug - Check directory structure
+        run: |
+          echo "=== Root directory ==="
+          ls -la
+          echo "=== ansible-lint directory ==="
+          ls -la ansible-lint/ || echo "ansible-lint directory not found"
+          echo "=== ansible-lint/ansible-lint directory ==="
+          ls -la ansible-lint/ansible-lint/ || echo "ansible-lint/ansible-lint directory not found"
+          echo "=== Looking for action.yml ==="
+          find . -name "action.yml" -type f || echo "No action.yml found"
 
-      - name: Test local ansible-lint action with explicit version
-        uses: ./ansible-lint/ansible-lint/
+      - name: Test local ansible-lint action with explicit version (root level)
+        uses: ./
         with:
           setup_python: "true"
           requirements_file: "meta/requirements.yml"
           gh_action_ref: "v25.5.0"  # Use input to simulate the v25.5.0 scenario
           # This tests that when gh_action_ref is set, it uses that version
           
-      - name: Test local ansible-lint action fallback to main
-        uses: ./ansible-lint/ansible-lint/
+      - name: Test local ansible-lint action fallback to main (root level)
+        uses: ./
         with:
           setup_python: "true"
           requirements_file: "meta/requirements.yml"
