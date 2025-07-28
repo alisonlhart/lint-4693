@@ -1,0 +1,18 @@
+name: ansible-lint
+on: [pull_request, push]
+
+jobs:
+  build:
+    name: Ansible Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run ansible-lint
+        uses: ansible/ansible-lint@v25.5.0
+        # This should install ansible-lint 25.5.0 but according to the bug report
+        # it actually installs 25.6.2.dev25 instead
+        with:
+          setup_python: "true"
+          requirements_file: "meta/requirements.yml"
